@@ -2,45 +2,54 @@
 power = true
 //Remember to put on protection
 Object.defineProperty(window, 'power', {
-    value: true,
+    value: power,
     writable: false,
     enumerable: true
 });
 //Lay down your pieces
-you = null
+let you = null
 //And let's begin object creation
+let me = new Object
 you = new Object
 //Fill in my data parameters Initialization
-you.my = new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0])
+me.data = new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0])
+you.data = me.data
 //Set up our new world
-world = new Response(you.my, {
+world = new Response(you.data, {
     headers: { 'Content-Type': 'application/wasm' }
 });
 //And let's begin the simulation
-WebAssembly.instantiateStreaming(world).then((me)=>{
+WebAssembly.instantiateStreaming(world).then(()=>{
+    let me = {...window.me}
+    let you = {...window.you}
     //If I'm a set of point
-    if (I = [0,0]){
+    if (me.like = {
+        x:0,y:0
+    }){
         // Then I will give you my dimension
-        you = "O (0,0)"
+        you.dimension = `(${me.like.x},${me.like.y})`
+        me.like=null
     };
     //If I'm a circle
-    if (I = {
+    if (me.like = {
         posX : 0,
         posY : 0,
         r : 1
     }) {
         //Then I will give you my circumference
-        you = 2*I.r*Math.PI
+        you.circumference = 2*me.like.r*Math.PI
+        me.like=null
     };
     //If I'm a sine wave
-    if (I = Math.sin) {
+    if (me.like = Math.sin) {
         //Then you can sit on all my tangents
-        you = I(Math.PI/2)
+        you.posY = me.like(Math.PI/2)
+        me.like=null
     }
     //If I approach infinity
-    if (I = Infinity){
+    if (me.value = Infinity){
         //Then you can be my limitations
-        you = Math.min(I,Number.MAX_SAFE_INTEGER)
+        you.limit = Math.min(me.value,Number.MAX_SAFE_INTEGER)
     }
     //Switch my current
     me.current=!me.current
@@ -49,15 +58,13 @@ WebAssembly.instantiateStreaming(world).then((me)=>{
     //to DC
     me.current='DC'
     //And then blind my vision
-    me.vision="eye"
     Object.defineProperty(me, 'vision', {
-      value: false,
-      writable: true,
-      enumerable: true
+      enumerable: true,
+      get:()=>{return void 0}
     });
     //So dizzy, so dizzy
     for (let i = 0; i < 10000; i++) {
-        me = Math.random()
+        me.value = Math.random()
     }
     //Oh, we can travel. To AD
     me.travel='AD'
@@ -71,76 +78,79 @@ WebAssembly.instantiateStreaming(world).then((me)=>{
     //So deeply, so deeply
     we.we=we
     //If I can, if I can
-    if (I = true) if (I = true){
+    if (me.can = true) if (me.can = true){
         //Give you all the simulations
-        you = WebAssembly
+        you = {...me,...you}
         //Then I can, then I can Be your only satisfaction
-        if (I) if (I) {
+        if (me.can) if (me.can) {
             you = {
-                satisfaction: I
+                satisfaction: me
             }
             Object.defineProperty(you, 'satisfaction', {
-             value: true,
+             value: you.satisfaction,
              writable: false,
              enumerable: true
             });
         }
     }
     //If I can make you happy
-    if (I = you.happy = true){
+    if (you.happy = me.can){
         //I will run the execution
-        I = (()=>{
+        (()=>{
             //Though we are trapped. In this strange, strange simulation
-            return WebAssembly.execution = I
+            return window.execution
         })()
-        
+
     }
     //If I'm an eggplant
-    if (I = '茄子') {
-        //Then I will give u my nutrients
-        you = I.nutrients
+    if (me.like = '茄子') {
+        //Then I will give you my nutrients
+        you.nutrients = me.nutrients ?? 'all'
+        me.nutrients = null
     }
     //If I'm a tomato
-    if (I = '西紅柿(番茄)') {
+    if (me.like = '西紅柿(番茄)') {
         //Then I will give you antioxidants
-        O2 = 'O2'
-        you = !O2
+        you.antioxidants = me.antioxidants ?? 'all'
+        me.antioxidants = null
     }
     //If I'm a tabby cat
-    if (I = {
+    if (me.like = {//猫 娘 (确信)
         type: 'cat',
         skin:'tabby'
     }) {
         //Then I will purr for your enjoyment
-        you.enjoyment = I.purr
+        you.enjoyment = me.purr?.()
     }
     //If I'm the only God
-    if (I = 'yyds') {
+    if (me.isGOD = true) {
         //Then you're the proof of my existence
-        you.proof = I
+        you.proof = `god is ${me.isGOD}ly`
     }
     //Switch my gender To F
-    my={}
-    my.gender = 'F'
+    me.gender = 'F'
     // to M
-    my.gender = 'M'
+    me.gender = 'M'
     //And then do whatever From AM to PM
     time = 'AM'
     do{
-       whatever=()=>{
-           //不可描述...但這是Eobslv作者的原意(X)
-           (I.fuck = ()=>{return child = ['F']})(you)
+       whatever=function(){
+           //(now me is man)
+           (me.fuck = function(who){
+               return who.child = ['F']
+               
+           })(you)
        }
        whatever()
        time = (Math.random()*2>>0)?'AM':'PM'
     } while (time!=='PM');
     //Oh, my switch role To S
-    my.role = 'S'
+    me.role = 'S'
     //to M
-    my.role = 'M'
+    me.role = 'M'
     //So we can enter The trance, the trance
     (we.trance=()=>{
-        my.at = you.at = 'entirely'
+        me.at = you.at = 'entirely'
     })()
-    
+
 })
