@@ -83,9 +83,8 @@ WebAssembly.instantiateStreaming(world).then(()=>{
         you = {...me,...you}
         //Then I can, then I can Be your only satisfaction
         if (me.can) if (me.can) {
-            you = {
-                satisfaction: me
-            }
+            you.satisfaction = me
+
             Object.defineProperty(you, 'satisfaction', {
              value: you.satisfaction,
              writable: false,
